@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <title>LOGIN PAGE</title>
+    <style>
+        /* Custom style to center the submit button and add background image */
+        body {
+            background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url('background.jpg');
+            background-size: cover;
+        }
+
+        .center-submit {
+            display: flex;
+            justify-content: center;
+        }
+        
+    </style>
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100">
+    <div class="text-center">
+        <form action="event.html" class="p-5 bg-light rounded was-validated">
+                <legend class="mb-4">LOGIN PAGE</legend>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your Email" required>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" required>
+                    <div class="invalid-feedback">Please enter a password.</div>
+                </div>
+                <div class="mb-3 form-check center-submit">
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                </div>
+        </form>
+    </div>
+</body>
+</html>

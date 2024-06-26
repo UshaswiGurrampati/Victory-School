@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System Sign-Up</title>
+    <style>
+        /* Styling for the centered container */
+        .center-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: url('signup.jpg') center/cover no-repeat;
+        }
+
+        /* Styling for the form elements box */
+        .form-box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 300px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling for labels */
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Styling for inputs */
+        input {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        /* Styling for buttons */
+        button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-container">
+        <div class="form-box">
+            <label for="username">Username:</label>
+            <input id="username" name="username">
+            <label for="email">Email:</label>
+            <input id="email" name="email">
+            <label for="phone">Phone Number:</label>
+            <input id="phone" name="phone">
+            <label for="password">Password:</label>
+            <input id="password" name="password">
+            <label for="confirm-password">Confirm Password:</label>
+            <input id="confirm-password" name="confirm-password">
+            <button id="signup-button">Sign Up</button>
+            <script>
+       document.getElementById("signup-button").addEventListener("click", () => {
+        const usernameInput = document.getElementById("username");
+        const emailInput = document.getElementById("email");
+        const phoneInput = document.getElementById("phone");
+        const passwordInput = document.getElementById("password");
+        const confirmPasswordInput = document.getElementById("confirm-password");
+        if (usernameInput.value.trim() === "" &&
+            emailInput.value.trim() === "" &&
+            phoneInput.value.trim() === "" &&
+            passwordInput.value.trim() === "" &&
+            confirmPasswordInput.value.trim() === "") {
+            alert('Please fill in all required fields.');
+            return false;
+        }
+
+        const emailRegex = /^[a-z0-9._%+-]+@[^\s@]+\.[^\s@]+$/;
+
+        if (emailInput.value.trim() ==="" || !emailRegex.test(emailInput.value.trim())) {
+            alert('Please enter a valid email address.');
+            return false;
+        }
+
+        const phoneRegex = /^\d{10}$/;
+        if (phoneInput.value.trim() ==="" || !phoneRegex.test(phoneInput.value.trim())) {
+            alert('Please enter a valid 10-digit phone number.');
+            return false;
+        }
+
+        const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+        if (!passwordRegex.test(passwordInput.value.trim())) {
+            alert('Invalid passwordS');
+            return false;
+        }
+
+        if (usernameInput.value.trim() === "") {
+            alert('Please enter a username.');
+            return false;
+        }
+
+        if (passwordInput.value.trim() !== confirmPasswordInput.value.trim()) {
+            alert('Passwords do not match.');
+            return false;
+        }
+
+        window.location.href = "login.html";
+    });
+    </script>
+        </div>
+    </div>
+</body>
+</html>
